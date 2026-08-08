@@ -15,6 +15,32 @@ carteira do próprio assinante.
 Na primeira chamada o Claude abre a autorização do OnePro no navegador. Faça
 login e conceda o acesso; a conexão fica salva.
 
+Depois de instalar, **ligue o auto-update** do marketplace `etf1`:
+
+```
+/plugin  →  aba Marketplaces  →  etf1  →  Enable auto-update
+```
+
+Esse passo é necessário: marketplaces de terceiros vêm com auto-update desligado
+por padrão. Sem ele o plugin fica parado na versão que você instalou, e skills
+novas e correções não chegam.
+
+## Atualizações
+
+Com o auto-update ligado, o Claude Code checa por versões novas depois que a
+sessão inicia, com um atraso de até dez minutos. A sessão em andamento continua
+usando a versão que carregou; quando houver atualização, ele avisa para rodar
+`/reload-plugins` — ou a versão nova entra sozinha na próxima vez que você abrir
+o Claude.
+
+Para atualizar na hora, sem esperar o ciclo automático:
+
+```
+/plugin marketplace update etf1
+/plugin update onepro@etf1
+/reload-plugins
+```
+
 ## Requisitos
 
 Assinatura ativa do OnePro. O conector é um benefício do assinante: não há camada
