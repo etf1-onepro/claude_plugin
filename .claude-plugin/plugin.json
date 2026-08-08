@@ -1,5 +1,6 @@
 {
   "name": "onepro",
+  "displayName": "OnePro AI",
   "description": "Dados e motores de análise de investimentos do OnePro (etf1.com.br) na sua IA: ETFs BR e globais, ações, BDRs, FIIs, fundos, renda fixa, índices e a carteira do próprio assinante.",
   "author": {
     "name": "OnePro",
