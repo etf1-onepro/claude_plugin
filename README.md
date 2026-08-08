@@ -7,10 +7,20 @@ carteira do próprio assinante.
 
 ## Instalar
 
+No **claude.ai**, aba Plugins, o campo pede um repositório do GitHub:
+
+```
+etf1-onepro/claude_plugin
+```
+
+No **Claude Code**, no terminal ou na IDE:
+
 ```
 /plugin marketplace add https://etf1.com.br/claude/marketplace.json
 /plugin install onepro@etf1
 ```
+
+Os dois caminhos instalam o mesmo `onepro@etf1`.
 
 Na primeira chamada o Claude abre a autorização do OnePro no navegador. Faça
 login e conceda o acesso; a conexão fica salva.
@@ -30,7 +40,7 @@ novas e correções não chegam.
 Com o auto-update ligado, o Claude Code checa por versões novas depois que a
 sessão inicia, com um atraso de até dez minutos. A sessão em andamento continua
 usando a versão que carregou; quando houver atualização, ele avisa para rodar
-`/reload-plugins` — ou a versão nova entra sozinha na próxima vez que você abrir
+`/reload-plugins`, ou a versão nova entra sozinha na próxima vez que você abrir
 o Claude.
 
 Para atualizar na hora, sem esperar o ciclo automático:
@@ -78,16 +88,18 @@ dados."*
 
 ## Estrutura
 
-O plugin mora na raiz deste repositório:
+O plugin mora na raiz deste repositório, e o repositório também é o marketplace:
 
 ```
-.claude-plugin/plugin.json   manifesto
-.mcp.json                    servidor MCP remoto
-skills/                      skills empacotadas junto
+.claude-plugin/marketplace.json   catálogo, aponta para a própria raiz
+.claude-plugin/plugin.json        manifesto
+.mcp.json                         servidor MCP remoto
+skills/                           skills empacotadas junto
 ```
 
-O catálogo que aponta para cá é servido em
-`https://etf1.com.br/claude/marketplace.json`, e mora no repositório do site.
+O mesmo catálogo é servido em `https://etf1.com.br/claude/marketplace.json`, para
+quem adiciona por URL. Essa cópia mora no repositório do site e aponta para cá
+por fonte remota, porque caminho relativo só resolve contra um clone.
 
 ## Suporte
 

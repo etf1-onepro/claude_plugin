@@ -1,0 +1,18 @@
+{
+  "name": "etf1",
+  "owner": {
+    "name": "OnePro",
+    "url": "https://etf1.com.br"
+  },
+  "description": "Marketplace oficial do OnePro (etf1.com.br) para clientes de IA.",
+  "plugins": [
+    {
+      "name": "onepro",
+      "displayName": "OnePro AI",
+      "source": "./",
+      "description": "Dados e motores de análise de investimentos do OnePro na sua IA",
+      "homepage": "https://etf1.com.br/onepro",
+      "category": "finance"
+    }
+  ]
+}
