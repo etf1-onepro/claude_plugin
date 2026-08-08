@@ -1,2 +1,4 @@
-# Instruções internas para agentes de IA, não fazem parte do plugin publicado
+# Ferramenta de trabalho local, não faz parte do plugin publicado
 AGENTS.md
+.claude/
+.githooks/
