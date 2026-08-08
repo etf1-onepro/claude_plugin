@@ -27,6 +27,25 @@ Sem portfólio salvo, a resposta vem vazia **e isso é sucesso**: a conexão
 funcionou, a conta é que não tem carteira montada. Use `onepro_conexao_status`
 quando quiser separar as duas coisas sem depender de a conta ter dados.
 
+## Se esta skill carregou, o plugin está instalado
+
+Esta skill vem dentro do plugin: você só está lendo isto porque ele carregou.
+Logo, **"plugin não instalado" está descartado como causa**, e nenhuma tool
+`onepro_*` à vista significa que falta o connector, que é peça separada da
+instalação em todo cliente.
+
+- **claude.ai e Claude Desktop**: o OnePro entra como connector, em Customize →
+  Connectors. Precisa estar autorizado, o login abre no navegador, e precisa
+  estar **ligado naquela conversa**, no seletor de ferramentas. Connector
+  desligado na conversa não expõe tool nenhuma, com o plugin instalado do mesmo
+  jeito.
+- **Claude Code**: `/mcp` lista o servidor `onepro` e o estado da autorização.
+
+Comando de barra para gerenciar plugin (`/plugin ...`) só existe no Claude Code.
+No claude.ai a instalação é por menu, Customize → Plugins. Mandar o usuário
+digitar um comando que o cliente dele não tem trava a conversa em vez de
+resolver.
+
 ## O erro já traz a correção
 
 Toda falha do conector volta com a instrução do que fazer. Leia e siga:
@@ -35,7 +54,7 @@ gasta o saldo que você está tentando preservar.
 
 | Sintoma | O que é | O que fazer |
 |---|---|---|
-| Nenhuma tool `onepro_*` existe | Plugin não instalado nesta sessão | `/plugin marketplace add https://etf1.com.br/claude/marketplace.json` e `/plugin install onepro@etf1` |
+| Nenhuma tool `onepro_*` existe | Connector fora do ar nesta sessão, não plugin faltando | Siga a seção acima: autorize e ligue o connector no cliente em que o usuário está |
 | Tools existem, primeira chamada trava | Autorização pendente no navegador | Peça ao usuário para concluir o login e a permissão na aba aberta; a sessão fica salva depois disso |
 | Erro de autorização recorrente | Sessão expirada ou permissão revogada | Refazer a autorização pelo cliente, nunca contornar pedindo credencial |
 | Acesso negado com login válido | Assinatura inativa | O conector é benefício de assinante e não tem camada gratuita: encaminhe para https://etf1.com.br/onepro |
