@@ -7,11 +7,17 @@ carteira do próprio assinante.
 
 ## Instalar
 
-No **claude.ai**, aba Plugins, o campo pede um repositório do GitHub:
+No **claude.ai**, em Personalizar → Plugins, adicione o marketplace por
+repositório do GitHub:
 
 ```
 etf1-onepro/claude_plugin
 ```
+
+Instale o **OnePro AI**, clique em **Gerenciar**, abra a aba **Conectores** e,
+na linha do `onepro`, clique em **Instalar** e depois em **Vincular**. É esse
+conector que traz as tools, e é nele que a autorização do OnePro abre. Ele vem
+dentro do plugin: não há nada para adicionar em Configurações → Conectores.
 
 No **Claude Code**, no terminal ou na IDE:
 
@@ -20,12 +26,15 @@ No **Claude Code**, no terminal ou na IDE:
 /plugin install onepro@etf1
 ```
 
-Os dois caminhos instalam o mesmo `onepro@etf1`.
+Aqui o servidor MCP entra junto com o plugin, sem passo de conector à parte.
 
-Na primeira chamada o Claude abre a autorização do OnePro no navegador. Faça
-login e conceda o acesso; a conexão fica salva.
+Os dois caminhos instalam o mesmo `onepro@etf1`. A autorização do OnePro abre no
+navegador quando o cliente precisa dela, o que costuma ser na primeira chamada
+de uma tool. Faça login e conceda o acesso; a conexão fica salva. Não existe
+token para colar nem chave de API para pedir.
 
-Depois de instalar, **ligue o auto-update** do marketplace `etf1`:
+No Claude Code, depois de instalar, **ligue o auto-update** do marketplace
+`etf1`:
 
 ```
 /plugin  →  aba Marketplaces  →  etf1  →  Enable auto-update
