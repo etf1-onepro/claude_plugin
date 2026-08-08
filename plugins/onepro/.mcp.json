@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "onepro": {
+      "type": "http",
+      "url": "https://etf1.com.br/mcp"
+    }
+  }
+}

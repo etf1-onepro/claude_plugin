@@ -1,0 +1,19 @@
+{
+  "name": "onepro",
+  "description": "Dados e motores de análise de investimentos do OnePro (etf1.com.br) na sua IA: ETFs BR e globais, ações, BDRs, FIIs, fundos, renda fixa, índices e a carteira do próprio assinante.",
+  "author": {
+    "name": "OnePro",
+    "url": "https://etf1.com.br"
+  },
+  "homepage": "https://etf1.com.br/onepro",
+  "repository": "https://github.com/etf1-onepro/claude_plugin",
+  "keywords": [
+    "investimentos",
+    "etf",
+    "carteira",
+    "portfolio",
+    "renda-fixa",
+    "brasil",
+    "mcp"
+  ]
+}
