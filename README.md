@@ -67,10 +67,12 @@ gratuita.
 
 ## O que ele faz
 
-18 tools `onepro_*` de consulta e de computação, entre elas:
+19 tools `onepro_*` de consulta e de computação, entre elas:
 
 - **Consulta**: buscar ativos, ficha, comparação, screener, composição
   (holdings), séries mensais.
+- **Navegação**: o gráfico citado pelo nome ("aquele de janelas móveis") vira a
+  tool com os parâmetros, ou a tela do app onde ele mora.
 - **Carteira do assinante**: listar portfólios salvos e detalhar pesos e
   implementações.
 - **Motores**: análise de carteira, aba Comportamento, otimização (fronteira

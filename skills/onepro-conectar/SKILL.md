@@ -20,7 +20,7 @@ onepro_meus_portfolios
 ```
 
 Passou: relate o `dataset_version` da resposta e siga para o que o usuário
-queria. Não invente uma bateria de testes por tool: as 18 compartilham o mesmo
+queria. Não invente uma bateria de testes por tool: todas compartilham o mesmo
 transporte e a mesma sessão.
 
 Sem portfólio salvo, a resposta vem vazia **e isso é sucesso**: a conexão

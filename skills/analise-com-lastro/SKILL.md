@@ -41,7 +41,9 @@ Misturar os dois na mesma tabela é o erro que passa despercebido, porque nada n
 
 ## Benchmark é escolha, não default
 
-CDI para tudo é o vício clássico. O conector aceita uma lista fechada de índices, sempre no parâmetro `benchmarks` (índice não é produto e não entra em `tickers`):
+CDI para tudo é o vício clássico. Índice não é produto e não entra em `tickers`. Existem duas portas para um índice, e confundi-las produz resposta errada com cara de certa.
+
+**Porta 1, o parâmetro `benchmarks`:** a lista fechada de treze siglas, nas tools que comparam.
 
 | O que a carteira tem | Benchmark | Sigla |
 |---|---|---|
@@ -55,6 +57,12 @@ CDI para tudo é o vício clássico. O conector aceita uma lista fechada de índ
 | Renda fixa EUA | Bloomberg US Aggregate | `TBMUS` |
 | Renda fixa global | Bloomberg Global Aggregate (hedged) | `TBM` |
 | Referência de poder de compra | Inflação BR / EUA | `IPCA` / `CPI` |
+
+**Porta 2, o índice como linha da comparação:** qualquer índice do catálogo com série mensal entra em `onepro_analise_portfolio`, dentro de `carteiras`, como uma linha de um item só a 100%. Um índice sozinho a 100% **é** o índice, sem taxa, do mesmo jeito que a tela faz. É por aqui que passa índice fora dos treze, um MSCI setorial ou regional, por exemplo. Ache o nome exato antes de montar, com `onepro_buscar_ativos` em `classe="indice"`, que só devolve índice com série.
+
+**Nunca diga que a plataforma não compara com um índice** sem ter tentado a busca e a porta 2. A lista fechada é do parâmetro, não do conector, e tratar as duas como a mesma coisa inventa uma limitação que não existe. Vazio na busca costuma ser nome com palavra demais: repita com menos palavras, seguindo a instrução que a própria resposta traz.
+
+**Sem escolha explícita**, CDI e IBOV entram sozinhos quando as linhas são portfólios salvos, que é a tela recém aberta. Linha montada na conversa não recebe esse default, porque o pedido já veio fechado: o índice que você quiser ali vai em `benchmarks`, e aí entra sempre.
 
 **Carteira mista:** apresente 2–3 candidatos pertinentes com uma linha explicando a diferença e deixe o usuário escolher. Benchmark cravado pelo usuário se respeita.
 
