@@ -85,8 +85,14 @@ em termos reais (R$ de hoje).
 
 ## Skills
 
-O plugin traz duas skills junto:
+O plugin traz três skills junto:
 
+- **`onepro-plano`** responde à dúvida de caminho: como eu faço isso no OnePro,
+  onde fica aquele gráfico, qual análise responde o que eu quero. Nessas
+  perguntas ela entra sozinha. Para planejar um relatório antes de rodar,
+  chame-a pelo nome com `/onepro-plano`: ela faz de uma vez as perguntas que
+  mudam o resultado, cada uma já com a recomendação dela, e devolve o plano de
+  chamadas para você aprovar ou cortar enquanto cortar ainda não gastou consulta.
 - **`analise-com-lastro`** disciplina como a IA reporta o que buscou: janela
   sempre em datas, benchmark nomeado, dado do conector separado de conta
   derivada, meses estendidos por índice declarados como simulação, e quando o
