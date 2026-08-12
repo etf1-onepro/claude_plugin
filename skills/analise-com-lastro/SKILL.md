@@ -27,7 +27,11 @@ Envelope lido, os números da resposta ficam ancorados no que a chamada de fato 
 
 ## Nominal e real não se somam
 
-`onepro_analise_portfolio` devolve resultados **nominais** na moeda pedida. Os demais motores devolvem **reais**: otimização, plano de retirada, GBI, multiperíodo, prospectivo, comportamento.
+| Tool | Base publicada |
+|---|---|
+| `onepro_analise_portfolio` | nominal por padrão; `response_format="detailed"` acrescenta campos `_real` |
+| `onepro_comportamento` | nominal e real lado a lado nas visões comuns; `janelas_moveis` usa a base escolhida em `termos` |
+| `onepro_otimizacao`, `onepro_plano_retirada`, `onepro_gbi`, `onepro_multiperiodo`, `onepro_prospectivo`, `onepro_calculadora_aportes` | real |
 
 Misturar os dois na mesma tabela é o erro que passa despercebido, porque nada na saída acusa. Rotule cada número com a base e mantenha as bases separadas. Precisa comparar? Peça `response_format="detailed"` na análise de portfólio, que traz as variantes `_real`.
 
@@ -66,7 +70,12 @@ CDI para tudo é o vício clássico. Índice não é produto e não entra em `ti
 
 **Carteira mista:** apresente 2–3 candidatos pertinentes com uma linha explicando a diferença e deixe o usuário escolher. Benchmark cravado pelo usuário se respeita.
 
-**Cobertura do índice na janela:** meses em que o índice não tem série contam como **0%**: o benchmark aparece achatado sem avisar. Se a janela efetiva começa antes da série do índice, diga isso ou encurte a janela para o período em que os dois existem.
+**Cobertura do índice na janela:** cada benchmark de
+`onepro_analise_portfolio` traz `cobertura`, com início, fim,
+`meses_com_dado`, `meses_na_janela` e `meses_sem_dado`. Meses ausentes entram
+como 0% no motor. Se `meses_sem_dado` for maior que zero, diga quantos são e
+não trate o trecho achatado como desempenho realizado; para comparar sem esse
+viés, repita na interseção indicada por início e fim.
 
 ## Simulação não é previsão
 

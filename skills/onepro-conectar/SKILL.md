@@ -31,15 +31,16 @@ quando quiser separar as duas coisas sem depender de a conta ter dados.
 
 Esta skill vem dentro do plugin: você só está lendo isto porque ele carregou.
 Logo, **"plugin não instalado" está descartado como causa**, e nenhuma tool
-`onepro_*` à vista significa que falta o connector, que é peça separada da
-instalação em todo cliente.
+`onepro_*` à vista significa que o conector não está disponível naquela sessão.
+O modo de corrigir depende do cliente:
 
-- **claude.ai e Claude Desktop**: o OnePro entra como connector, em Customize →
-  Connectors. Precisa estar autorizado, o login abre no navegador, e precisa
-  estar **ligado naquela conversa**, no seletor de ferramentas. Connector
-  desligado na conversa não expõe tool nenhuma, com o plugin instalado do mesmo
-  jeito.
-- **Claude Code**: `/mcp` lista o servidor `onepro` e o estado da autorização.
+- **claude.ai e Cowork**: no OnePro AI, clique em **Gerenciar**, abra a **aba
+  Conectores** e instale ou vincule o `onepro`. Depois, deixe o conector ligado
+  naquela conversa no seletor de ferramentas. Ele vem dentro do plugin, não é
+  adicionado pela lista global de conectores da conta.
+- **Claude Code**: o servidor entra junto com o plugin, sem instalação à parte.
+  `/mcp` lista o `onepro`, mostra o estado da autorização e permite ligá-lo se
+  estiver desabilitado.
 
 Comando de barra para gerenciar plugin (`/plugin ...`) só existe no Claude Code.
 No claude.ai a instalação é por menu, Customize → Plugins. Mandar o usuário
@@ -54,7 +55,7 @@ gasta o saldo que você está tentando preservar.
 
 | Sintoma | O que é | O que fazer |
 |---|---|---|
-| Nenhuma tool `onepro_*` existe | Connector fora do ar nesta sessão, não plugin faltando | Siga a seção acima: autorize e ligue o connector no cliente em que o usuário está |
+| Nenhuma tool `onepro_*` existe | Conector indisponível nesta sessão, não plugin faltando | Siga a seção acima: instale ou vincule dentro do plugin no claude.ai/Cowork; no Claude Code, confira `/mcp` |
 | Tools existem, primeira chamada trava | Autorização pendente no navegador | Peça ao usuário para concluir o login e a permissão na aba aberta; a sessão fica salva depois disso |
 | Erro de autorização recorrente | Sessão expirada ou permissão revogada | Refazer a autorização pelo cliente, nunca contornar pedindo credencial |
 | Acesso negado com login válido | Assinatura inativa | O conector é benefício de assinante e não tem camada gratuita: encaminhe para https://etf1.com.br/onepro |

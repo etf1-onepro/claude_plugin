@@ -37,6 +37,14 @@ O catálogo não se decora, se consulta, e ele cresce sem avisar:
 - A **description de cada tool** lista os parâmetros que ela aceita. Leia antes
   de prometer um parâmetro no plano.
 
+Uma ambiguidade merece ficar decorada porque os nomes são quase iguais:
+**"Janelas Móveis"** é o gráfico da aba Comportamento para uma carteira
+(`onepro_comportamento`) e também da área Comparativo para várias linhas
+(`onepro_analise_portfolio`), ambos com `visao="janelas_moveis"`.
+`onepro_multiperiodo` é outra tela: resume CAGR real, percentis e extremos em
+várias durações. Nunca entregue Multi Período como se fosse o gráfico chamado
+"Janelas Móveis".
+
 Toda pergunta sai com uma rota ou com a lacuna nomeada, e nomear a lacuna é
 assunto de `analise-com-lastro`.
 
@@ -71,7 +79,7 @@ Numerado, um passo por chamada, cada passo com a tool e os parâmetros que vão
 nela. A última linha diz o que o usuário vai receber.
 
 ```
-1. onepro_buscar_ativos(termo="bova", classe="etf") para fixar o ticker
+1. onepro_buscar_ativos(query="bova", classe="etf") para fixar o ticker
 2. onepro_analise_portfolio(carteiras=[...], benchmarks=["IBOV"], moeda="BRL")
 3. onepro_multiperiodo(...) para as janelas móveis de 5 anos
 Você vai receber uma tabela de retorno e risco na janela comum, com o IBOV ao lado.
@@ -95,6 +103,9 @@ plano na hora, e a mudança vira frase para o usuário antes de você seguir.
 
 ## Guardrails
 
+- Pedido explícito para não executar nenhuma tool se respeita literalmente:
+  não leia resource nem chame o localizador. Descreva essa chamada de navegação
+  como próximo passo da rota.
 - O número entra no texto depois da chamada que o trouxe. O plano promete a
   busca, e o resultado dela aparece só quando ela volta.
 - Pergunta ao usuário é para decisão dele. O que você consegue buscar, busque.

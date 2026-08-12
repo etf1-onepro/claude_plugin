@@ -79,9 +79,11 @@ gratuita.
   eficiente), plano de retirada (SWR/PWR), GBI, janelas móveis, Monte Carlo
   prospectivo.
 
-Somente-leitura: nenhuma tool altera dados da conta. Os dados vêm de um
-**snapshot mensal**: toda resposta traz `dataset_version`, e os motores raciocinam
-em termos reais (R$ de hoje).
+Somente-leitura: nenhuma tool altera dados da conta. As chamadas ainda consomem
+a cota do assinante e ficam registradas para segurança e auditoria. Os dados vêm
+de um **snapshot mensal**: toda resposta traz `dataset_version`. Os motores de
+planejamento e simulação usam termos reais (R$ de hoje); a análise comparativa
+declara na própria resposta quando entrega base nominal, real ou ambas.
 
 ## Skills
 
@@ -90,7 +92,7 @@ O plugin traz três skills junto:
 - **`onepro-plano`** responde à dúvida de caminho: como eu faço isso no OnePro,
   onde fica aquele gráfico, qual análise responde o que eu quero. Nessas
   perguntas ela entra sozinha. Para planejar um relatório antes de rodar,
-  chame-a pelo nome com `/onepro-plano`: ela faz de uma vez as perguntas que
+  chame-a pelo nome com `/onepro:onepro-plano`: ela faz de uma vez as perguntas que
   mudam o resultado, cada uma já com a recomendação dela, e devolve o plano de
   chamadas para você aprovar ou cortar enquanto cortar ainda não gastou consulta.
 - **`analise-com-lastro`** disciplina como a IA reporta o que buscou: janela
